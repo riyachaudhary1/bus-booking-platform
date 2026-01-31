@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { useCommunity } from '../context/CommunityContext';
 import { useLanguage } from '../context/LanguageContext';
+import { useNotification } from '../context/NotificationContext';
 import CreatePost from './CreatePost';
 import PostCard from './PostCard';
 import '../styles/CommunityPage.css';
@@ -11,7 +12,12 @@ import '../styles/CommunityPage.css';
 const CommunityPage = () => {
   const { posts } = useCommunity();
   const { t } = useLanguage();
+  const { triggerEventNotification } = useNotification();
   const [showCreateForm, setShowCreateForm] = useState(false);
+
+  const handleTestNotification = () => {
+    triggerEventNotification('new_comment');
+  };
 
   return (
     <div className="community-page">
@@ -28,6 +34,13 @@ const CommunityPage = () => {
             onClick={() => setShowCreateForm(!showCreateForm)}
           >
             {showCreateForm ? 'Close' : '✍️ Share Your Story'}
+          </button>
+          <button
+            className="test-notification-button"
+            onClick={handleTestNotification}
+            title="Test a notification"
+          >
+            📢 Test Notification
           </button>
         </div>
 

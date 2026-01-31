@@ -1,14 +1,16 @@
-// src/components/CreatePost.js
-// Form to create new posts
+// src/components/CreatePost.js (Updated)
+// Form to create new posts with notifications
 
 import React, { useState } from 'react';
 import { useCommunity } from '../context/CommunityContext';
 import { useLanguage } from '../context/LanguageContext';
+import { useNotification } from '../context/NotificationContext';
 import '../styles/CreatePost.css';
 
 const CreatePost = ({ onPostCreated }) => {
   const { createPost } = useCommunity();
   const { t } = useLanguage();
+  const { triggerEventNotification } = useNotification();
   const [formData, setFormData] = useState({
     title: '',
     content: '',
@@ -35,13 +37,15 @@ const CreatePost = ({ onPostCreated }) => {
     e.preventDefault();
 
     if (!formData.title.trim() || !formData.content.trim()) {
-      alert('Please fill in all fields');
+      triggerEventNotification('error', {
+        title: '❌ Empty Fields',
+        message: 'Please fill in all fields'
+      });
       return;
     }
 
     setIsSubmitting(true);
 
-    // Simulate API call
     setTimeout(() => {
       createPost({
         userId: 'current_user',
@@ -53,7 +57,6 @@ const CreatePost = ({ onPostCreated }) => {
         image: '📝'
       });
 
-      // Reset form
       setFormData({
         title: '',
         content: '',
@@ -62,11 +65,12 @@ const CreatePost = ({ onPostCreated }) => {
 
       setIsSubmitting(false);
 
+      // Show notification
+      triggerEventNotification('booking_confirmed');
+
       if (onPostCreated) {
         onPostCreated();
       }
-
-      alert('Post created successfully! 🎉');
     }, 500);
   };
 
@@ -77,7 +81,6 @@ const CreatePost = ({ onPostCreated }) => {
         <p className="create-post-subtitle">Share your travel experience with the community</p>
 
         <form onSubmit={handleSubmit} className="create-post-form">
-          {/* Title Input */}
           <div className="form-group">
             <label htmlFor="title">Title</label>
             <input
@@ -93,7 +96,6 @@ const CreatePost = ({ onPostCreated }) => {
             <small>{formData.title.length}/100 characters</small>
           </div>
 
-          {/* Category Select */}
           <div className="form-group">
             <label htmlFor="category">Category</label>
             <select
@@ -111,7 +113,6 @@ const CreatePost = ({ onPostCreated }) => {
             </select>
           </div>
 
-          {/* Content Textarea */}
           <div className="form-group">
             <label htmlFor="content">Description</label>
             <textarea
@@ -128,7 +129,6 @@ const CreatePost = ({ onPostCreated }) => {
             <small>{formData.content.length}/500 characters</small>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}

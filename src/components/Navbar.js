@@ -1,9 +1,10 @@
 // src/components/Navbar.js
-// Navigation bar with theme toggle and language selector
+// Navigation bar with theme toggle, language selector, and notifications
 
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
 import LanguageSelector from './LanguageSelector';
+import NotificationCenter from './NotificationCenter';
 import { useLanguage } from '../context/LanguageContext';
 
 const Navbar = () => {
@@ -25,8 +26,9 @@ const Navbar = () => {
           <a href="#routes" className="navbar-link">{t('navbar.routes')}</a>
         </div>
 
-        {/* Right side - Theme and Language */}
+        {/* Right side - Notifications, Language, and Theme */}
         <div className="navbar-right">
+          <NotificationCenter />
           <LanguageSelector />
           <ThemeToggle />
         </div>

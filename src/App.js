@@ -7,9 +7,10 @@ import { LanguageProvider } from './context/LanguageContext';
 import { CommunityProvider } from './context/CommunityContext';
 import { NotificationProvider } from './context/NotificationContext';
 import { ReviewProvider } from './context/ReviewContext';
+import { RouteProvider } from './context/RouteContext';
 import Navbar from './components/Navbar';
 import ToastContainer from './components/ToastContainer';
-import RoutesPage from './components/RoutesPage';
+import RoutePlannerPage from './components/RoutePlannerPage';
 import './App.css';
 
 function AppContent() {
@@ -17,7 +18,7 @@ function AppContent() {
     <div className="App">
       <Navbar />
       <ToastContainer />
-      <RoutesPage />
+      <RoutePlannerPage />
     </div>
   );
 }
@@ -29,7 +30,9 @@ function App() {
         <NotificationProvider>
           <CommunityProvider>
             <ReviewProvider>
-              <AppContent />
+              <RouteProvider>
+                <AppContent />
+              </RouteProvider>
             </ReviewProvider>
           </CommunityProvider>
         </NotificationProvider>

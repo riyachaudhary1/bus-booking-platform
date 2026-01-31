@@ -1,0 +1,32 @@
+{
+  "navbar": {
+    "logo": " BusBooker",
+    "home": "होम",
+    "bookings": "मेरी बुकिंग",
+    "community": "समुदाय",
+    "routes": "रूट्स",
+    "darkMode": "डार्क",
+    "lightMode": "लाइट"
+  },
+  "hero": {
+    "title": "BusBooker में आपका स्वागत है",
+    "subtitle": "बसें बुक करें, अनुभव साझा करें, रूट्स खोजें"
+  },
+  "features": {
+    "bookBuses": {
+      "title": " बसें बुक करें",
+      "description": "अपने गंतव्य की बसें खोजें और बुक करें"
+    },
+    "community": {
+      "title": " समुदाय",
+      "description": "अपनी यात्रा की कहानियां और सुझाव साझा करें"
+    },
+    "reviews": {
+      "title": " समीक्षाएं",
+      "description": "रूट्स को रेट करें और समीक्षाएं पढ़ें"
+    }
+  },
+  "languageSelector": {
+    "label": "भाषा:"
+  }
+}

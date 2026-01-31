@@ -1,0 +1,32 @@
+{
+  "navbar": {
+    "logo": " BusBooker",
+    "home": "Inicio",
+    "bookings": "Mis Reservas",
+    "community": "Comunidad",
+    "routes": "Rutas",
+    "darkMode": "Oscuro",
+    "lightMode": "Claro"
+  },
+  "hero": {
+    "title": "Bienvenido a BusBooker",
+    "subtitle": "Reserva autobuses, comparte experiencias, explora rutas"
+  },
+  "features": {
+    "bookBuses": {
+      "title": " Reservar Autobuses",
+      "description": "Encuentra y reserva autobuses a tu destino"
+    },
+    "community": {
+      "title": " Comunidad",
+      "description": "Comparte tus historias de viaje y consejos"
+    },
+    "reviews": {
+      "title": " Reseñas",
+      "description": "Califica rutas y lee reseñas"
+    }
+  },
+  "languageSelector": {
+    "label": "Idioma:"
+  }
+}

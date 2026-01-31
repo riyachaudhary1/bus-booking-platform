@@ -1,39 +1,53 @@
 // src/App.js
-// Main app component wrapped in ThemeProvider
+// Main app component with all providers
 
 import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
+import { useLanguage } from './context/LanguageContext';
 import './App.css';
 
+// Inner component that uses language (must be inside LanguageProvider)
+function AppContent() {
+  const { t } = useLanguage();
+
+  return (
+    <div className="App">
+      <Navbar />
+      
+      <main className="main-content">
+        <section className="hero">
+          <h2>{t('hero.title')}</h2>
+          <p>{t('hero.subtitle')}</p>
+        </section>
+
+        <section className="features">
+          <div className="feature-card">
+            <h3>{t('features.bookBuses.title')}</h3>
+            <p>{t('features.bookBuses.description')}</p>
+          </div>
+          <div className="feature-card">
+            <h3>{t('features.community.title')}</h3>
+            <p>{t('features.community.description')}</p>
+          </div>
+          <div className="feature-card">
+            <h3>{t('features.reviews.title')}</h3>
+            <p>{t('features.reviews.description')}</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
+
+// Wrap everything in providers
 function App() {
   return (
     <ThemeProvider>
-      <div className="App">
-        <Navbar />
-        
-        <main className="main-content">
-          <section className="hero">
-            <h2>Welcome to BusBooker</h2>
-            <p>Book buses, share experiences, explore routes</p>
-          </section>
-
-          <section className="features">
-            <div className="feature-card">
-              <h3> Book Buses</h3>
-              <p>Find and book buses to your destination</p>
-            </div>
-            <div className="feature-card">
-              <h3> Community</h3>
-              <p>Share your travel stories and tips</p>
-            </div>
-            <div className="feature-card">
-              <h3> Reviews</h3>
-              <p>Rate routes and read reviews</p>
-            </div>
-          </section>
-        </main>
-      </div>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

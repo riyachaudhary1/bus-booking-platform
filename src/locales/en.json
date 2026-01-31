@@ -1,0 +1,32 @@
+{
+  "navbar": {
+    "logo": " BusBooker",
+    "home": "Home",
+    "bookings": "My Bookings",
+    "community": "Community",
+    "routes": "Routes",
+    "darkMode": "Dark",
+    "lightMode": "Light"
+  },
+  "hero": {
+    "title": "Welcome to BusBooker",
+    "subtitle": "Book buses, share experiences, explore routes"
+  },
+  "features": {
+    "bookBuses": {
+      "title": " Book Buses",
+      "description": "Find and book buses to your destination"
+    },
+    "community": {
+      "title": " Community",
+      "description": "Share your travel stories and tips"
+    },
+    "reviews": {
+      "title": " Reviews",
+      "description": "Rate routes and read reviews"
+    }
+  },
+  "languageSelector": {
+    "label": "Language:"
+  }
+}

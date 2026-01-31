@@ -1,0 +1,141 @@
+/* src/styles/RatingOverview.css */
+/* Styles for rating overview */
+
+.rating-overview {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.rating-overview.no-ratings {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.rating-overview.no-ratings p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.rating-summary {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.average-rating {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.average-rating h3 {
+  margin: 0;
+  font-size: 3rem;
+  color: #ffc107;
+}
+
+.average-rating p {
+  margin: 0.25rem 0 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 1;
+}
+
+.rating-stars .star {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.rating-stars .star.filled {
+  color: #ffc107;
+}
+
+.total-reviews {
+  margin: 1rem 0 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Rating Distribution */
+.rating-distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.distribution-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rating-label {
+  width: 50px;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.distribution-count {
+  width: 30px;
+  text-align: right;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .rating-overview {
+    padding: 1.5rem;
+  }
+
+  .rating-summary {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .rating-stars {
+    justify-content: center;
+  }
+
+  .distribution-row {
+    gap: 0.5rem;
+  }
+
+  .rating-label {
+    width: 40px;
+    font-size: 0.85rem;
+  }
+
+  .distribution-count {
+    width: 25px;
+    font-size: 0.85rem;
+  }
+}

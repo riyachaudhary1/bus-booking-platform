@@ -1,14 +1,15 @@
 // src/App.js
-// Main app with all providers and components
+// Main app with all providers
 
 import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { CommunityProvider } from './context/CommunityContext';
 import { NotificationProvider } from './context/NotificationContext';
+import { ReviewProvider } from './context/ReviewContext';
 import Navbar from './components/Navbar';
 import ToastContainer from './components/ToastContainer';
-import CommunityPage from './components/CommunityPage';
+import RoutesPage from './components/RoutesPage';
 import './App.css';
 
 function AppContent() {
@@ -16,7 +17,7 @@ function AppContent() {
     <div className="App">
       <Navbar />
       <ToastContainer />
-      <CommunityPage />
+      <RoutesPage />
     </div>
   );
 }
@@ -27,7 +28,9 @@ function App() {
       <LanguageProvider>
         <NotificationProvider>
           <CommunityProvider>
-            <AppContent />
+            <ReviewProvider>
+              <AppContent />
+            </ReviewProvider>
           </CommunityProvider>
         </NotificationProvider>
       </LanguageProvider>

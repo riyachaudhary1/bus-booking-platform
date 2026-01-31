@@ -1,0 +1,103 @@
+/* src/styles/CommunityPage.css */
+/* Styles for community page */
+
+.community-page {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.community-header {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.community-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
+  color: var(--text-primary);
+}
+
+.community-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.community-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.create-post-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.create-post-button {
+  padding: 1rem 2rem;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.create-post-button:hover {
+  background-color: #5568d3;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.posts-feed {
+  margin-top: 2rem;
+}
+
+.posts-feed h2 {
+  margin: 0 0 1.5rem 0;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+}
+
+.no-posts {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.no-posts p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .community-container {
+    padding: 1rem;
+  }
+
+  .community-header {
+    padding: 1.5rem;
+  }
+
+  .community-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .community-header p {
+    font-size: 0.95rem;
+  }
+
+  .posts-feed h2 {
+    font-size: 1.1rem;
+  }
+}

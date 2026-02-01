@@ -398,7 +398,7 @@ This internship project successfully demonstrates full-stack web development ski
 
 ## 📎 ATTACHMENTS
 
-- Live URL: https://your-site-name.netlify.app
+- Live URL: https://bus-booking-platform.netlify.app/
 - GitHub Repository: https://github.com/riyachaudhary1/bus-booking-platform
 - Project Source Code: All files in repository
 

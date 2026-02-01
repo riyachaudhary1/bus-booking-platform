@@ -20,13 +20,13 @@ export const ReviewProvider = ({ children }) => {
     } else {
       initializeSampleReviews();
     }
-  }, []);
+  }, [calculateRatings]);
 
   // Save reviews to localStorage
   useEffect(() => {
     localStorage.setItem('reviews', JSON.stringify(reviews));
     calculateRatings(reviews);
-  }, [reviews]);
+  }, [reviews, calculateRatings]);
 
   // Initialize with sample reviews
   const initializeSampleReviews = () => {

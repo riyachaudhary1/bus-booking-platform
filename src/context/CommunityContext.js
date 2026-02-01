@@ -11,7 +11,7 @@ const generateId = () => '_' + Math.random().toString(36).substr(2, 9);
 export const CommunityProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
-  const [userProfiles, setUserProfiles] = useState({});
+  const [userProfiles] = useState({});
 
   // Load posts from localStorage when app starts
   useEffect(() => {

@@ -8,7 +8,7 @@ import { useRoute } from '../context/RouteContext';
 import '../styles/RoutePlannerPage.css';
 
 const RoutePlannerPage = () => {
-  const { routes, selectedRoute, selectRoute } = useRoute();
+  const { selectedRoute, selectRoute } = useRoute();
   const [hasSearched, setHasSearched] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
 

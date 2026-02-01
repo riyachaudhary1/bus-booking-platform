@@ -11,6 +11,42 @@ export const ReviewProvider = ({ children }) => {
   const [reviews, setReviews] = useState([]);
   const [routeRatings, setRouteRatings] = useState({});
 
+  // Calculate ratings for routes - DEFINED FIRST
+  const calculateRatings = useCallback((allReviews) => {
+    const ratings = {};
+
+    allReviews
+      .filter(r => r.isVisible)
+      .forEach(review => {
+        if (!ratings[review.routeId]) {
+          ratings[review.routeId] = {
+            routeId: review.routeId,
+            routeName: review.routeName,
+            totalReviews: 0,
+            averageRating: 0,
+            distribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }
+          };
+        }
+
+        ratings[review.routeId].totalReviews += 1;
+        ratings[review.routeId].distribution[review.rating] += 1;
+      });
+
+    // Calculate averages
+    Object.keys(ratings).forEach(routeId => {
+      const route = ratings[routeId];
+      if (route.totalReviews > 0) {
+        const sum = Object.keys(route.distribution).reduce(
+          (total, star) => total + (parseInt(star) * route.distribution[star]),
+          0
+        );
+        route.averageRating = (sum / route.totalReviews).toFixed(1);
+      }
+    });
+
+    setRouteRatings(ratings);
+  }, []);
+
   // Load reviews from localStorage
   useEffect(() => {
     const savedReviews = localStorage.getItem('reviews');
@@ -87,42 +123,6 @@ export const ReviewProvider = ({ children }) => {
     setReviews(samples);
   };
 
-  // Calculate ratings for routes
-  const calculateRatings = useCallback((allReviews) => {
-    const ratings = {};
-
-    allReviews
-      .filter(r => r.isVisible)
-      .forEach(review => {
-        if (!ratings[review.routeId]) {
-          ratings[review.routeId] = {
-            routeId: review.routeId,
-            routeName: review.routeName,
-            totalReviews: 0,
-            averageRating: 0,
-            distribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }
-          };
-        }
-
-        ratings[review.routeId].totalReviews += 1;
-        ratings[review.routeId].distribution[review.rating] += 1;
-      });
-
-    // Calculate averages
-    Object.keys(ratings).forEach(routeId => {
-      const route = ratings[routeId];
-      if (route.totalReviews > 0) {
-        const sum = Object.keys(route.distribution).reduce(
-          (total, star) => total + (parseInt(star) * route.distribution[star]),
-          0
-        );
-        route.averageRating = (sum / route.totalReviews).toFixed(1);
-      }
-    });
-
-    setRouteRatings(ratings);
-  }, []);
-
   // Create review
   const createReview = useCallback((reviewData) => {
     const newReview = {
@@ -156,7 +156,6 @@ export const ReviewProvider = ({ children }) => {
           const now = new Date().getTime();
           const hoursPassed = (now - createdTime) / (1000 * 60 * 60);
 
-          // Only allow edit within 24 hours
           if (hoursPassed <= 24) {
             return {
               ...review,
@@ -192,7 +191,6 @@ export const ReviewProvider = ({ children }) => {
       prev.map(r => {
         if (r.id === reviewId) {
           const updated = { ...r, reported: true };
-          // Hide if too many reports (simulate with 1 report for demo)
           if (r.reported) {
             updated.isVisible = false;
           }

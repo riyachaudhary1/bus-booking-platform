@@ -5,7 +5,7 @@
 **Domain:** Full Stack Web Development  
 **Duration:** 59 Days (Jan 27 - Mar 27, 2026)  
 **Stipend:** ₹3,000 (100% Completion)  
-**Live Project URL:** https://your-site-name.netlify.app
+**Live Project URL:** https://bus-booking-platform.netlify.app/
 
 ---
 

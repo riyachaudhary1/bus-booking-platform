@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# BusBooker 🚌
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive full-stack web application for bus booking and travel community management.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+### 1. Community System
+- Create and share travel experiences
+- Comment on posts
+- Like/Unlike functionality
+- Content moderation
+- User verification badges
 
-### `npm start`
+### 2. Real-time Notifications
+- Toast notifications
+- Notification center
+- Customizable preferences
+- Event-triggered alerts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. Route Planning
+- Advanced search functionality
+- Filter & sort options
+- Traffic level indicators
+- Seat availability
+- Operator information
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 4. Multi-language Support
+- English, Hindi, Spanish
+- Dynamic switching
+- localStorage persistence
 
-### `npm test`
+### 5. Dark Mode
+- Light/Dark theme toggle
+- Smooth transitions
+- CSS variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 6. Rating & Reviews
+- 5-star rating system
+- Review CRUD operations
+- Rating analytics
+- Moderation features
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:** React 18, Context API, CSS3
+- **State Management:** Context API with Hooks
+- **Styling:** CSS3 with CSS Variables
+- **Storage:** localStorage
+- **Deployment:** Netlify
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
+```bash
+# Clone repository
+git clone https://github.com/riyachaudhary1/bus-booking-platform.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Install dependencies
+npm install
 
-### `npm run eject`
+# Start development server
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Build for production
+npm run build
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🌐 Live Demo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[https://bus-booking-platform.netlify.app/](https://bus-booking-platform.netlify.app/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📁 Project Structure
+```
+src/
+├── components/    # Reusable React components
+├── context/       # Context API providers
+├── styles/        # CSS stylesheets
+├── locales/       # Translation files
+└── App.js         # Main application
+```
 
-## Learn More
+## 📊 Key Learnings
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Advanced React patterns & hooks
+- State management with Context API
+- CSS variables for theming
+- Responsive design principles
+- Component composition
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Contributing
 
-### Code Splitting
+Contributions are welcome! Feel free to submit pull requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📝 License
 
-### Analyzing the Bundle Size
+MIT License - feel free to use this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 👩‍💻 Author
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Riya Chaudhary**
+- GitHub: [@riyachaudhary1](https://github.com/riyachaudhary1)
+- Email: riasangam0@gmail.com
